@@ -69,21 +69,57 @@
         </pluginManagement>
 
     </build>
-
     <repositories>
         <repository>
-            <id>central</id>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-            <name>central</name>
+            <id>adc</id>
+            <url>http://60.247.58.121:8182/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
+        <repository>
+            <id>snapshot</id>
+            <url>http://60.247.58.121:8182/nexus/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
+        <!--<repository>
+            <id>maven-releases</id>
+            <url>http://192.168.144.126:8081/nexus/repository/maven-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>-->
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
             <url>https://repo.spring.io/milestone</url>
+        </repository>
+
+        <repository>
+            <id>maven-releases</id>
+            <url>http://152.136.135.25:8081/nexus/repository/maven-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
         </repository>
     </repositories>
-
 </project>
